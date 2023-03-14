@@ -17,11 +17,25 @@
 		C03C74BE29BA27CD00DD642D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C74BD29BA27CD00DD642D /* SignUpViewController.swift */; };
 		C03C74C229BA2C0500DD642D /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C74C129BA2C0500DD642D /* OneLineTextField.swift */; };
 		C03C74C429BA4FD600DD642D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C74C329BA4FD600DD642D /* LoginViewController.swift */; };
+		C0476AA029BF425A00321499 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476A9F29BF425A00321499 /* Bundle-Decodable.swift */; };
+		C0476AA429BF475300321499 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = C0476AA329BF475300321499 /* activeChats.json */; };
+		C0476AA629BF484400321499 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = C0476AA529BF484400321499 /* waitingChats.json */; };
+		C0476AA929BF62C600321499 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AA829BF62C600321499 /* ActiveChatCell.swift */; };
+		C0476AAB29BF82E500321499 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AAA29BF82E500321499 /* GradientView.swift */; };
+		C0476AAD29C07E4E00321499 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AAC29C07E4E00321499 /* WaitingChatCell.swift */; };
+		C0476AB029C0809D00321499 /* SelfConfigureCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AAF29C0809D00321499 /* SelfConfigureCellProtocol.swift */; };
+		C0476AB229C08BF700321499 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AB129C08BF700321499 /* SectionHeader.swift */; };
+		C0476AB429C0A38C00321499 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = C0476AB329C0A38C00321499 /* users.json */; };
+		C0476AB729C0A56F00321499 /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AB629C0A56F00321499 /* MChat.swift */; };
+		C0476AB929C0A5B000321499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0476AB829C0A5B000321499 /* User.swift */; };
 		C08845C729B8CA6F00EFACFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08845C629B8CA6F00EFACFF /* AppDelegate.swift */; };
 		C08845C929B8CA6F00EFACFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08845C829B8CA6F00EFACFF /* SceneDelegate.swift */; };
 		C08845CB29B8CA6F00EFACFF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08845CA29B8CA6F00EFACFF /* AuthViewController.swift */; };
 		C08845D029B8CA7100EFACFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08845CF29B8CA7100EFACFF /* Assets.xcassets */; };
 		C08845D329B8CA7100EFACFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08845D129B8CA7100EFACFF /* LaunchScreen.storyboard */; };
+		C0C382D129BC7CE0001585B2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C382D029BC7CE0001585B2 /* ListViewController.swift */; };
+		C0C382D329BC7FE2001585B2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C382D229BC7FE2001585B2 /* MainTabBarController.swift */; };
+		C0C382D529BC8051001585B2 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C382D429BC8051001585B2 /* PeopleViewController.swift */; };
 		C0D6D31629BB6E3200837822 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D6D31529BB6E3200837822 /* SetupProfileViewController.swift */; };
 		C0D6D31829BB713D00837822 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D6D31729BB713D00837822 /* AddPhotoView.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +51,17 @@
 		C03C74BD29BA27CD00DD642D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C03C74C129BA2C0500DD642D /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		C03C74C329BA4FD600DD642D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0476A9F29BF425A00321499 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		C0476AA329BF475300321499 /* activeChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		C0476AA529BF484400321499 /* waitingChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
+		C0476AA829BF62C600321499 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		C0476AAA29BF82E500321499 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C0476AAC29C07E4E00321499 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
+		C0476AAF29C0809D00321499 /* SelfConfigureCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfigureCellProtocol.swift; sourceTree = "<group>"; };
+		C0476AB129C08BF700321499 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		C0476AB329C0A38C00321499 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		C0476AB629C0A56F00321499 /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
+		C0476AB829C0A5B000321499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C08845C329B8CA6F00EFACFF /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08845C629B8CA6F00EFACFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08845C829B8CA6F00EFACFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +69,9 @@
 		C08845CF29B8CA7100EFACFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08845D229B8CA7100EFACFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08845D429B8CA7100EFACFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C382D029BC7CE0001585B2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		C0C382D229BC7FE2001585B2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C0C382D429BC8051001585B2 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		C0D6D31529BB6E3200837822 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		C0D6D31729BB713D00837822 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +96,9 @@
 				C00592EB29B8DCA800EA33E1 /* UIColor + Extension.swift */,
 				C00592E929B8DB6100EA33E1 /* UIFont + Extension.swift */,
 				C00592E729B8D77100EA33E1 /* UIButton + Extension.swift */,
+				C0476AA329BF475300321499 /* activeChats.json */,
+				C0476AA529BF484400321499 /* waitingChats.json */,
+				C0476AB329C0A38C00321499 /* users.json */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -78,6 +109,9 @@
 				C00592F329B8E61600EA33E1 /* ButtonFormView.swift */,
 				C03C74C129BA2C0500DD642D /* OneLineTextField.swift */,
 				C0D6D31729BB713D00837822 /* AddPhotoView.swift */,
+				C0476A9F29BF425A00321499 /* Bundle-Decodable.swift */,
+				C0476AAA29BF82E500321499 /* GradientView.swift */,
+				C0476AB129C08BF700321499 /* SectionHeader.swift */,
 				C00592F129B8E39300EA33E1 /* UIKit */,
 			);
 			path = Extensions;
@@ -100,8 +134,37 @@
 				C03C74BD29BA27CD00DD642D /* SignUpViewController.swift */,
 				C03C74C329BA4FD600DD642D /* LoginViewController.swift */,
 				C0D6D31529BB6E3200837822 /* SetupProfileViewController.swift */,
+				C0C382D229BC7FE2001585B2 /* MainTabBarController.swift */,
+				C0C382D029BC7CE0001585B2 /* ListViewController.swift */,
+				C0C382D429BC8051001585B2 /* PeopleViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C0476AA729BF629E00321499 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C0476AA829BF62C600321499 /* ActiveChatCell.swift */,
+				C0476AAC29C07E4E00321499 /* WaitingChatCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C0476AAE29C0806900321499 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C0476AAF29C0809D00321499 /* SelfConfigureCellProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C0476AB529C0A56200321499 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0476AB629C0A56F00321499 /* MChat.swift */,
+				C0476AB829C0A5B000321499 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C08845BA29B8CA6F00EFACFF = {
@@ -123,8 +186,11 @@
 		C08845C529B8CA6F00EFACFF /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				C0476AB529C0A56200321499 /* Models */,
 				C03C74BF29BA27F200DD642D /* App */,
 				C03C74C029BA284C00DD642D /* ViewControllers */,
+				C0476AA729BF629E00321499 /* Cell */,
+				C0476AAE29C0806900321499 /* Protocols */,
 				C00592F229B8E3A300EA33E1 /* Extensions */,
 				C08845CF29B8CA7100EFACFF /* Assets.xcassets */,
 				C08845D129B8CA7100EFACFF /* LaunchScreen.storyboard */,
@@ -190,8 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0476AB429C0A38C00321499 /* users.json in Resources */,
 				C08845D329B8CA7100EFACFF /* LaunchScreen.storyboard in Resources */,
+				C0476AA429BF475300321499 /* activeChats.json in Resources */,
 				C08845D029B8CA7100EFACFF /* Assets.xcassets in Resources */,
+				C0476AA629BF484400321499 /* waitingChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,21 +271,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0476AB729C0A56F00321499 /* MChat.swift in Sources */,
 				C03C74C229BA2C0500DD642D /* OneLineTextField.swift in Sources */,
 				C03C74BE29BA27CD00DD642D /* SignUpViewController.swift in Sources */,
 				C00592EA29B8DB6100EA33E1 /* UIFont + Extension.swift in Sources */,
+				C0476AA929BF62C600321499 /* ActiveChatCell.swift in Sources */,
 				C08845CB29B8CA6F00EFACFF /* AuthViewController.swift in Sources */,
 				C0D6D31629BB6E3200837822 /* SetupProfileViewController.swift in Sources */,
+				C0C382D529BC8051001585B2 /* PeopleViewController.swift in Sources */,
 				C00592EE29B8DFFA00EA33E1 /* UILabel + Extension.swift in Sources */,
 				C00592F429B8E61600EA33E1 /* ButtonFormView.swift in Sources */,
 				C0D6D31829BB713D00837822 /* AddPhotoView.swift in Sources */,
+				C0476AA029BF425A00321499 /* Bundle-Decodable.swift in Sources */,
+				C0476AAB29BF82E500321499 /* GradientView.swift in Sources */,
 				C08845C729B8CA6F00EFACFF /* AppDelegate.swift in Sources */,
 				C00592F029B8E18700EA33E1 /* UIImageView + Extension.swift in Sources */,
 				C00592EC29B8DCA800EA33E1 /* UIColor + Extension.swift in Sources */,
+				C0476AB029C0809D00321499 /* SelfConfigureCellProtocol.swift in Sources */,
 				C08845C929B8CA6F00EFACFF /* SceneDelegate.swift in Sources */,
 				C00592E829B8D77100EA33E1 /* UIButton + Extension.swift in Sources */,
 				C03C74C429BA4FD600DD642D /* LoginViewController.swift in Sources */,
+				C0C382D129BC7CE0001585B2 /* ListViewController.swift in Sources */,
+				C0476AB229C08BF700321499 /* SectionHeader.swift in Sources */,
+				C0476AB929C0A5B000321499 /* User.swift in Sources */,
+				C0476AAD29C07E4E00321499 /* WaitingChatCell.swift in Sources */,
 				C00592F629B8EDE100EA33E1 /* StackView + Extension.swift in Sources */,
+				C0C382D329BC7FE2001585B2 /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +442,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,7 +473,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

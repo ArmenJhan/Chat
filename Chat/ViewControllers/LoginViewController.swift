@@ -100,9 +100,7 @@ extension LoginViewController {
             needAnAccAndSignUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             needAnAccAndSignUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -40),
             needAnAccAndSignUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            
         ])
-    
     }
 }
 
