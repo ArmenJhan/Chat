@@ -72,11 +72,6 @@ class ListViewController: UIViewController {
 
 // MARK: - Data Source
 extension ListViewController {
-    private func configure<T: SelfConfigureCellProtocol>(cellType: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)") }
-        cell.configure(with: value)
-        return cell
-    }
     
     private func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, MChat>(
@@ -88,9 +83,9 @@ extension ListViewController {
                 
                 switch section {
                 case .waitingChats:
-                    return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
+                    return self.configure(collectionView: collectionView, cellType: WaitingChatCell .self, withType: chat, for: indexPath)
                 case .activeChats:
-                   return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
+                    return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, withType: chat, for: indexPath)
                 }
             })
         

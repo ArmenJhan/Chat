@@ -33,6 +33,25 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        signUpButton.addTarget(self, action: #selector(signUpButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func signUpButtonPressed() {
+        print(#function)
+        AuthService.shared.register(
+            email: emailTextField.text,
+            password: passwordTextField.text,
+            confirmPassword: confirmPasswordTextField.text
+        ) { result in
+            switch result {
+            case .success(let user):
+                self.showAlert(with: "Успешно", and: "Вы зарегены")
+                print(user.email ?? "")
+            case .failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+                
+            }
+        }
     }
 }
 
@@ -101,6 +120,15 @@ extension SignUpViewController {
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
+    }
+}
+
+extension UIViewController {
+    func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 

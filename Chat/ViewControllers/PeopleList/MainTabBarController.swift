@@ -45,6 +45,16 @@ class MainTabBarController: UITabBarController {
         navigationVC.tabBarItem.image = image
         navigationVC.navigationBar.barTintColor = .mainWhite()
         
+        // объявляем свойство для настройки navigationBar
+        let navBarAppearance = UINavigationBarAppearance()
+        // задаем цвет для navigationBar
+        navBarAppearance.backgroundColor = .mainWhite()
+        navBarAppearance.shadowColor = .mainWhite()
+        // стандартный режим
+        navigationVC.navigationBar.standardAppearance = navBarAppearance
+        // scrollEdge  режим
+        navigationVC.navigationBar.scrollEdgeAppearance = navBarAppearance
+
         return navigationVC
     }
 }

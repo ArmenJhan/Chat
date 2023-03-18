@@ -25,7 +25,21 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        emailButton.addTarget(self, action: #selector(emailButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+
     }
+    
+    @objc private func emailButtonPressed() {
+        print(#function)
+        present(SignUpViewController(), animated: true)
+    }
+    
+    @objc private func loginButtonPressed() {
+        print(#function)
+        present(LoginViewController(), animated: true)
+    }
+    
 }
 
 // MARK: - NSLayoutConstraint

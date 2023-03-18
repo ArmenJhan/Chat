@@ -8,6 +8,7 @@
 import UIKit
 
 class ActiveChatCell: UICollectionViewCell, SelfConfigureCellProtocol {
+    
     static var reuseId: String = "ActiveChatCell"
     
     let friendImageView = UIImageView()
@@ -27,11 +28,12 @@ class ActiveChatCell: UICollectionViewCell, SelfConfigureCellProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with value: MChat) {
-        friendImageView.image = UIImage(named: value.userImageString)
-        friendName.text = value.username
-        lastMessage.text = value.lastMessage
-    }
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chat = value as? MChat else { return }
+        friendImageView.image = UIImage(named: chat.userImageString)
+        friendName.text = chat.username
+        lastMessage.text = chat.lastMessage
+      }
     
     func setConstraints() {
         friendImageView.translatesAutoresizingMaskIntoConstraints = false

@@ -10,10 +10,11 @@ import UIKit
 class AddPhotoView: UIView {
     
     let circleImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "avatar"))
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "avatar")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .center
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 1
         return imageView
@@ -42,8 +43,8 @@ class AddPhotoView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        circleImageView.layer.masksToBounds = true
         circleImageView.layer.cornerRadius = circleImageView.frame.width / 2
+        circleImageView.layer.masksToBounds = true
     }
     
     private func setupConstraints() {

@@ -104,7 +104,6 @@ struct SetupProfileViewControllerProvider: PreviewProvider {
         }
         
         func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-
         }
     }
 }

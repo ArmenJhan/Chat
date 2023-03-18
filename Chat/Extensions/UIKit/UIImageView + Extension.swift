@@ -15,3 +15,12 @@ extension UIImageView {
         self.contentMode = contentMode
     }
 }
+
+extension UIImageView {
+    func setupColor(color: UIColor) {
+        let tempalteImpage = self.image?.withRenderingMode(.alwaysTemplate)
+        self.image = tempalteImpage
+        self.tintColor = color
+        
+    }
+}
