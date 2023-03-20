@@ -29,15 +29,17 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
         signUpButton.addTarget(self, action: #selector(signUpButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     }
     
     @objc private func signUpButtonPressed() {
-        print(#function)
         AuthService.shared.register(
             email: emailTextField.text,
             password: passwordTextField.text,
@@ -45,12 +47,19 @@ class SignUpViewController: UIViewController {
         ) { result in
             switch result {
             case .success(let user):
-                self.showAlert(with: "Успешно", and: "Вы зарегены")
-                print(user.email ?? "")
+                self.showAlert(with: "Успешно", and: "Вы зарегены") { 
+                    self.present(SetupProfileViewController(currentUser: user), animated: true)
+                }
             case .failure(let error):
                 self.showAlert(with: "Ошибка", and: error.localizedDescription)
                 
             }
+        }
+    }
+    
+    @objc private func loginButtonPressed() {
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
         }
     }
 }
@@ -124,9 +133,11 @@ extension SignUpViewController {
 }
 
 extension UIViewController {
-    func showAlert(with title: String, and message: String) {
+    func showAlert(with title: String, and message: String, completion: @escaping(() -> Void) = {}) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            completion()
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }

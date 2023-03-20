@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SetupProfileViewController: UIViewController {
     
@@ -29,12 +30,42 @@ class SetupProfileViewController: UIViewController {
     let goToChatButton = UIButton(title: "Go to chats", titleColor: .white, backgroundColor: .darkButton())
     
     let profileImage = AddPhotoView()
-
+    
+    private let currentUser: User
+    
+    init(currentUser: User) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
         setupConstraints()
+        goToChatButton.addTarget(self, action: #selector(goToChatButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func goToChatButtonPressed() {
+        FirestoreService.shared.saveProfileWith(
+            id: currentUser.uid,
+            email: currentUser.email ?? "",
+            username: fullNameTextField.text,
+            avatarImageString: "nil ",
+            description: aboutMeTextField.text,
+            sex: segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex )) { result in
+                switch result {
+                case .success(let muser):
+                    self.showAlert(with: "Success", and: "Приятного общения")
+                    print(muser)
+                case .failure(let error):
+                    self.showAlert(with: "Failure", and: error.localizedDescription)
+                }
+            }
     }
 }
 
@@ -97,7 +128,7 @@ struct SetupProfileViewControllerProvider: PreviewProvider {
     }
     
     struct ContainerView: UIViewControllerRepresentable {
-        let viewController = SetupProfileViewController()
+        let viewController = SetupProfileViewController(currentUser: Auth.auth().currentUser!)
         
         func makeUIViewController(context: Context) -> some SetupProfileViewController {
             return viewController
