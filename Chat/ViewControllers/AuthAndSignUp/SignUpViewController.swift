@@ -47,18 +47,17 @@ class SignUpViewController: UIViewController {
         ) { result in
             switch result {
             case .success(let user):
-                self.showAlert(with: "Успешно", and: "Вы зарегены") { 
-                    self.present(SetupProfileViewController(currentUser: user), animated: true)
+                self.showAlert(with: "Успешно!", and: "Вы зарегистрированны!") {
+                    self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                 }
             case .failure(let error):
-                self.showAlert(with: "Ошибка", and: error.localizedDescription)
-                
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }
         }
     }
     
     @objc private func loginButtonPressed() {
-        dismiss(animated: true) {
+        self.dismiss(animated: true) {
             self.delegate?.toLoginVC()
         }
     }

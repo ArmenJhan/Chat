@@ -15,7 +15,7 @@ class SetupProfileViewController: UIViewController {
     let fullNameLabel = UILabel(text: "Full name")
     let aboutMeLabel = UILabel(text: "About me")
     let sexLabel = UILabel(text: "Sex")
- 
+    
     let fullNameTextField = OneLineTextField(font: .avenir(size: 20))
     let aboutMeTextField = OneLineTextField(font: .avenir(size: 20))
     
@@ -44,26 +44,29 @@ class SetupProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .white
         setupConstraints()
         goToChatButton.addTarget(self, action: #selector(goToChatButtonPressed), for: .touchUpInside)
     }
     
     @objc private func goToChatButtonPressed() {
+        
         FirestoreService.shared.saveProfileWith(
             id: currentUser.uid,
-            email: currentUser.email ?? "",
+            email: currentUser.email!,
             username: fullNameTextField.text,
-            avatarImageString: "nil ",
+            avatarImageString: "nil",
             description: aboutMeTextField.text,
-            sex: segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex )) { result in
+            sex: segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        ) { result in
                 switch result {
                 case .success(let muser):
-                    self.showAlert(with: "Success", and: "Приятного общения")
-                    print(muser)
+                    self.showAlert(with: "Успешно!", and: "Данные сохранены!", completion: {
+                        self.present(MainTabBarController(), animated: true, completion: nil)
+                    })
                 case .failure(let error):
-                    self.showAlert(with: "Failure", and: error.localizedDescription)
+                    self.showAlert(with: "Ошибка!", and: error.localizedDescription)
                 }
             }
     }
@@ -114,7 +117,7 @@ extension SetupProfileViewController {
             goToChatButton.heightAnchor.constraint(equalToConstant: 60)
             
             
-
+            
         ])
     }
 }

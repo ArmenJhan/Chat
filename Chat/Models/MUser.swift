@@ -8,12 +8,12 @@ import FirebaseFirestore
 
 struct MUser: Hashable, Decodable {
     var username: String
-    var email: String
+    var email: String?
     var userImageString: String
-    var description: String
-    var sex: String
+    var description: String?
+    var sex: String?
     var id: String
-    
+
     var representation: [String: Any] {
         var rep = ["username": username]
         rep["email"] = email

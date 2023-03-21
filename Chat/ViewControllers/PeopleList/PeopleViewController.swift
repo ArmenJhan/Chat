@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum Section: Int, CaseIterable {
     case users
@@ -18,18 +19,35 @@ enum Section: Int, CaseIterable {
 
 class PeopleViewController: UIViewController {
     
-    let users = Bundle.main.decode([MUser].self, from: "users.json")
+  //  let users = Bundle.main.decode([MUser].self, from: "users.json")
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MUser>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupSearchBar()
         setupCollectionView()
         createDataSource()
         reloadData(with: nil)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(signOut))
+        
+    }
+    
+    @objc private func signOut() {
+        let alert = UIAlertController(title: nil, message: "Are you sure to want to sign out?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { _ in
+            do {
+                try Auth.auth().signOut()
+                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+            } catch {
+                print(error.localizedDescription)
+            }
+        })
+        present(alert, animated: true)
     }
     
     private func setupSearchBar() {
@@ -54,15 +72,15 @@ class PeopleViewController: UIViewController {
     }
     
     private func reloadData(with searchText: String?) {
-        let filtred = users.filter { user in
-            user.contains(filter: searchText)
-        }
-        
-        var snapShot = NSDiffableDataSourceSnapshot<Section, MUser>()
-        snapShot.appendSections([.users])
-        snapShot.appendItems(filtred, toSection: .users)
-        
-        dataSource.apply(snapShot, animatingDifferences: true)
+//        let filtred = users.filter { user in
+//            user.contains(filter: searchText)
+//        }
+//
+//        var snapShot = NSDiffableDataSourceSnapshot<Section, MUser>()
+//        snapShot.appendSections([.users])
+//        snapShot.appendItems(filtred, toSection: .users)
+//
+//        dataSource.apply(snapShot, animatingDifferences: true)
     }
     
     private func createUsersSection() -> NSCollectionLayoutSection {
