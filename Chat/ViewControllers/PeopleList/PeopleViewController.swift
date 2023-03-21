@@ -13,16 +13,27 @@ enum Section: Int, CaseIterable {
     
     func description(usersCount: Int) -> String {
         return "\(usersCount) people nearby"
-       
     }
 }
 
 class PeopleViewController: UIViewController {
     
-  //  let users = Bundle.main.decode([MUser].self, from: "users.json")
+//    let users = Bundle.main.decode([MUser].self, from: "users.json")
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MUser>!
+    
+    private let currentUser: MUser
+    
+    init(currentUser: MUser) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +53,8 @@ class PeopleViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { _ in
             do {
                 try Auth.auth().signOut()
-                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+                self.present(AuthViewController(), animated: true)
+//                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
             } catch {
                 print(error.localizedDescription)
             }
